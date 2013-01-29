@@ -8,10 +8,10 @@ import java.util.regex.Pattern;
 
 public class LabeledStatement {
 
-	private static final Pattern pattern = Pattern.compile("[:]{1}[:a-zA-Z]*", Pattern.CASE_INSENSITIVE);
+	private static final Pattern pattern = Pattern.compile("[:]{1}[a-zA-Z0-9]*", Pattern.CASE_INSENSITIVE);
 	private int binds = 0;
 	private String originalQuery;
-	private Map labelPosition = new HashMap();
+	private Map<String,Integer> labelPosition = new HashMap<String,Integer>();
 	private String preparedStatement;
 	private Connection connection;
 
@@ -48,11 +48,11 @@ public class LabeledStatement {
 		this.originalQuery = query;
 	}
 
-	public Map getLabelPosition() {
+	public Map<String,Integer> getLabelPosition() {
 		return labelPosition;
 	}
 
-	public void setLabelPosition(Map labelPosition) {
+	public void setLabelPosition(Map<String,Integer> labelPosition) {
 		this.labelPosition = labelPosition;
 	}
 

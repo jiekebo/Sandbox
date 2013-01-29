@@ -1,6 +1,6 @@
 package com.jiekebo.jdbc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -21,10 +21,10 @@ public class LabeledStatementTest {
 	}
 
 	@Test
-	public void testInt() {
+	public void testPosition() {
 		String query = "SELECT * FROM test WHERE name = :name AND age = :age";
 		LabeledStatement stm = new LabeledStatement(query);
-		assertEquals(2, stm.getLabelPosition().get("age"));
+        assertEquals(new Integer(2), stm.getLabelPosition().get("age"));
 	}
 	
 }
