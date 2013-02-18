@@ -26,7 +26,7 @@ public class Boxing {
 		increase(b);
 		// varargs
 		int i = 1;
-		overload(i);
+		//overload(i);
 		Integer test = 10;
 		Object o = test;
 		
